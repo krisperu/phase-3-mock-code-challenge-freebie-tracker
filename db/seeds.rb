@@ -18,4 +18,10 @@ puts "Creating freebies..."
 # ***************************************************************
 # Create freebies Here
 
+10.times do
+    dev_id = Dev.ids.sample
+    company_id = Company.ids.sample
+    Freebie.create(item_name: "Freebie #{rand(1..10)}", value: rand(1..200), company_id: company_id, dev_id: dev_id)
+end
+
 puts "Seeding done!"
