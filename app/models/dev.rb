@@ -3,7 +3,7 @@ class Dev < ActiveRecord::Base
     has_many :companies, through: :freebies
 
     def recieved_one?(item_name)
-        item = self.freebies.find_by(item_name: item_name)
+        # item = self.freebies.find_by(item_name: item_name)
         # item ? true : false
         self.freebies.pluck(item_names).include?(item.name)
     end
